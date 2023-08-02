@@ -1,0 +1,63 @@
+<form novalidate>
+    
+    <label for="fname">Nome completo</label>
+    <input [(ngModel)]="nome"  type="text" id="fname" name="fname" placeholder="Seu Nome Completo"/>
+     <p class="erro">{{nomeErro}}</p>
+
+  <label for="lemail">Email</label>
+    <input [(ngModel)]="email"  type="email" id="lemail" name="email" placeholder="Seu email">
+     <p class="erro">{{emailErro}}</p>
+
+    <label  for="fnif">Nif</label>
+    <input [(ngModel)]="nif" required  type="number" id="fnif" name="fnif" placeholder="Nif">
+     <p class="erro">{{nifErro}}</p>
+
+     <label for="fnasc">Data de Nascimento</label>
+    <input [(ngModel)]="dataNasc" type="date" id="fnasc" name="fnasc" placeholder="Data de Nascimento">
+    <p class="erro">{{erroNascimento}}</p>
+
+    <label for="country">País</label>
+    <select  (change)="cities()" [(ngModel)]="selectedCountry" id="country" name="country" >
+      <option value="portugal">Portugal</option>
+      <option value="espanha">Espanha</option>
+      <option value="angola">Angola</option>
+       <option value="usa">EUA</option>
+    </select>
+        <p class="erro">{{erropais}}</p>
+
+    
+    <label for="city" >Cidade</label>
+    <select id="city" name="city"[(ngModel)]="selectedCity" >
+       <option *ngFor="let x of cidades" [value]="x" >{{x}}</option>
+    </select>
+    <p class="erro">{{errocidade}}</p>
+
+   <label for="lender">Endereço</label>
+    <input [(ngModel)]="endereco" type="text"  id="lender" name="lender" placeholder="Endereço">
+     <p class="erro">{{erroEnder}}</p>
+
+  <label for="lpostal">Código Postal</label>
+    <input  [(ngModel)]="zipcode" type="text"  id="lpostal" name="lpostal" placeholder="Código Postal">
+     <p class="erro">{{erroZipCode}}</p>
+
+
+<label for="ltel">Telefone</label>
+    <input [(ngModel)]="telefone"  type="text"  id="ltel" name="ltel" placeholder="Telefone">
+   <p class="erro">{{erroTelefone}}</p>
+
+    
+<label for="genero">Género</label>
+    <select [(ngModel)]="genero" id="genero" name="genero">
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+     </select>
+     
+     <p class="erro">{{erroGenero}}</p>
+
+  <input (click)="enviar()"   type="submit" value="Submit">
+  
+       <p class="ok">{{tudoOk}}</p>
+
+  </form>
+
+ 
